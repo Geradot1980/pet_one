@@ -5,7 +5,7 @@ const BodyNews = () => {
 
 	const [pageData, setPageData] = useState({})
 	const [rerender, setRerender] = useState(false)
-	console.log('pageData: ', pageData);
+	//console.log('pageData: ', pageData);
 	useEffect(() => {
 		//console.log(rerender)
 		fetch('https://rosrezerv.gov.ru/api/news')
@@ -18,7 +18,7 @@ const BodyNews = () => {
 			})
 	}, [])
 
-	function clickLink(event) {
+	/* function clickLink(event) {
 		let targetHref;
 		if (event) {
 			event.preventDefault()
@@ -31,22 +31,16 @@ const BodyNews = () => {
 			})
 			.catch(err => console.error(err));
 	}
-
+ */
 	return (
 		<>
+			<Paginarot pageData={pageData} setPageData={setPageData} rerender={rerender} />
 			<h1>!!!</h1>
-			<p>Размерность пагинатора: </p>
-			{/* 	<a onClick={clickLink} href={pageData.links.first} >first </a>
-			<a onClick={clickLink} href={pageData.links.last} >last </a>
-			<a onClick={clickLink} href={pageData.links.prev} >prev </a>
-			<a onClick={clickLink} href={pageData.links.next}  >next</a> */}
-			<Paginarot
-				pageData={pageData}
-				setPageData={setPageData}
-				rerender={rerender}
-			/>
 
-			{<pre>{JSON.stringify(pageData.meta, null, 2)}</pre>}
+			{/* 	{rerender ? <Paginarot pageData={pageData} setPageData={setPageData} rerender={rerender} /> : null} */}
+
+			<Paginarot pageData={pageData} setPageData={setPageData} rerender={rerender} />
+			{/* {<pre>{JSON.stringify(pageData.meta, null, 2)}</pre>} */}
 
 
 		</>

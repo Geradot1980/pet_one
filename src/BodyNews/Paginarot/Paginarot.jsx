@@ -2,33 +2,41 @@ import React from "react";
 
 const Paginarot = (props) => {
 
+	function clickLink(event) {
+		let targetHref;
+		if (event) {
+			event.preventDefault()
+			targetHref = event.target.href;
+		} else targetHref = 'https://rosrezerv.gov.ru/api/news';
+		fetch(targetHref)
+			.then(result => result.json())
+			.then((json) => {
+				props.setPageData(json)
+			})
+			.catch(err => console.error(err));
+	}
+
 	const pagesLi = () => {
+		let aList = []
+		let links = props.pageData.meta.links
 
-		//let li = [<li>1</li>, <li>2</li>, <li>3</li>, <li>4</li>];
-		//let lengthLinks = props.pageData.meta
-		//	console.log(JSON.parse(props))
-
-		//console.log(props.pageData.meta.links.length)
-		/* 	for (let index = 0; index < 7; index++) {
-				//const element = array[index];
-				lis[index] = <li key={index}>{index}</li> */
-		//console.log(lis)
+		for (let index = 0; index < links.length; index++) {
+			aList[index] = <li key={index}
+				className={links[index].active ? "active" : "none"}>
+				<a href={links[index].url}
+					onClick={clickLink}>
+					{links[index].label}</a></li>
+		}
 		return (
-			<>
-				<a href={props.pageData.links.first}>first </a>
-				<a href={props.pageData.links.last} >last </a>
-				<a href={props.pageData.links.prev} >prev </a>
-				<a href={props.pageData.links.next}  >next</a>
-			</>
+			<ul className="pagination">
+				{aList}
+			</ul>
 		)
 	}
 
 	return (
 		<div>
-			<div>Parinator</div>
-			<ul className="pagination">
-				{props.rerender ? pagesLi() : null}
-			</ul>
+			{props.rerender ? pagesLi() : null}
 		</div>
 	)
 }

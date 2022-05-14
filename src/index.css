@@ -22,14 +22,19 @@ ul.pagination li {
 	display: inline;
 	text-align: center;
 	height: 30px;
-	margin: 4px;
-	padding: 5px;
+	margin: 3px;
+	padding: 4px;
 	border: 1px solid red;
 }
 
 ul.pagination li a {
 	color: black;
-	float: left;
-	padding: 8px 16px;
+
+	padding: 5px;
 	text-decoration: none;
+}
+
+ul.pagination li.active {
+	background: red;
+	font-weight: bold;
 }
