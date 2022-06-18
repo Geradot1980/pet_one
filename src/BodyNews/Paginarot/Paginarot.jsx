@@ -19,14 +19,21 @@ const Paginarot = (props) => {
 	const pagesLi = () => {
 		let aList = []
 		let links = props.pageData.meta.links
+		console.log(links)
 
 		for (let index = 0; index < links.length; index++) {
+			// заменяем на нормальные стрелки.
+			links[index].label = links[index].label.replace('&laquo;', '«').replace('&raquo;', '»')
+			// генерируем элементы пагинатора
 			aList[index] = <li key={index}
 				className={links[index].active ? "active" : "none"}>
 				<a href={links[index].url}
 					onClick={clickLink}>
 					{links[index].label}</a></li>
 		}
+
+
+
 		return (
 			<ul className="pagination">
 				{aList}
