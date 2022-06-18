@@ -4,20 +4,51 @@ import Paginarot from "./Paginarot/Paginarot";
 const BodyNews = () => {
 
 	const [pageData, setPageData] = useState({})
+
+	// это должно исключиться async/await
 	const [rerender, setRerender] = useState(false)
 	//console.log('pageData: ', pageData);
-	useEffect(() => {
-		//console.log(rerender)
-		fetch('https://rosrezerv.gov.ru/api/news')
-			.then(result => result.json())
-			.then((json) => {
-				setPageData(json)
-				//	console.log(`first`)
-				setRerender(true)
-				//	console.log(rerender)
-			})
-	}, [])
 
+	/* 	async function fetchNews() {
+			console.log(rerender)
+			fetch('https://rosrezerv.gov.ru/api/news')
+				.then(result => result.json())
+				.then((json) => {
+					setPageData(json)
+					//	console.log(`first`)
+					setRerender(true)
+					//	console.log(rerender)
+				})
+		}
+	
+		useEffect(fetchNews, []) */
+
+	useEffect(() => {
+		async function fetchNews() {
+			const result = await fetch('https://rosrezerv.gov.ru/api/news')
+			const json = await result.json()
+			setRerender(true)
+			setPageData(json)
+		}
+		fetchNews()
+		//console.log(`Статус: ${rerender}`)
+		//console.log(pageData);
+	}
+		, [])
+
+
+	/* 	useEffect(() => {
+			console.log(rerender)
+			fetch('https://rosrezerv.gov.ru/api/news')
+				.then(result => result.json())
+				.then((json) => {
+					setPageData(json)
+					//	console.log(`first`)
+					setRerender(true)
+					//	console.log(rerender)
+				})
+		}, [])
+	 */
 	/* function clickLink(event) {
 		let targetHref;
 		if (event) {
@@ -37,7 +68,6 @@ const BodyNews = () => {
 			<Paginarot pageData={pageData} setPageData={setPageData} rerender={rerender} />
 			<h1>!!!</h1>
 
-			{/* 	{rerender ? <Paginarot pageData={pageData} setPageData={setPageData} rerender={rerender} /> : null} */}
 
 			<Paginarot pageData={pageData} setPageData={setPageData} rerender={rerender} />
 			{/* {<pre>{JSON.stringify(pageData.meta, null, 2)}</pre>} */}
