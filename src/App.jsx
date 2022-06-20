@@ -1,8 +1,10 @@
 //import logo from './logo.svg';
-import './App.css';
+//import './App.css';
+import './normalize.css'
 import BodyNews from './BodyNews/BodyNews';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
+
 
 const App = () => {
 
