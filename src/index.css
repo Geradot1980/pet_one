@@ -41,3 +41,21 @@ ul.pagination li.active {
 	background: red;
 	font-weight: bold;
 }
+
+article {
+	flex-grow: 0;
+	flex-shrink: 1;
+	border: 1px solid lightgray;
+	border-radius: 10px;
+
+}
+
+.cards {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.article__image {
+	width: 100%;
+}

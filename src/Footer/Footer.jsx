@@ -5,3 +5,4 @@ export default function Footer() {
 		<footer>Bye-Bye!!</footer>
 	)
 }
+

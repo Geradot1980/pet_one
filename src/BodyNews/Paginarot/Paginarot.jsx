@@ -19,7 +19,7 @@ const Paginarot = (props) => {
 	const pagesLi = () => {
 		let aList = []
 		let links = props.pageData.meta.links
-		//console.log(links)
+		//console.log(props)
 
 		for (let index = 0; index < links.length; index++) {
 			// заменяем на нормальные стрелки.
@@ -43,7 +43,8 @@ const Paginarot = (props) => {
 
 	return (
 		<div>
-			{props.rerender ? pagesLi() : null}
+			{/* 	{props.rerender ? pagesLi() : null} */}
+			{pagesLi()}
 
 		</div>
 	)
