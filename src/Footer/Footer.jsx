@@ -2,7 +2,10 @@ import React from "react"
 
 export default function Footer() {
 	return (
-		<footer>Bye-Bye!!</footer>
+		<footer>
+			<p></p>
+			<div>(c) Все права пренадлежат...</div>
+		</footer>
 	)
 }
 
