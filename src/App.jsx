@@ -1,22 +1,24 @@
-//import logo from './logo.svg';
-//import './App.css';
+import { Routes, Route } from 'react-router-dom'
 
-import BodyNews from './BodyNews/BodyNews';
-import Footer from './Footer/Footer';
-import Header from './Header/Header';
+import BodyNews from './Components/BodyNews/BodyNews';
+import Layout from './Components/Layout/Layout';
+import NotFound from './Components/NotFound/NotFound';
+import SinglePageNews from './Components/SinglePageNews/SinglePageNews';
+
 
 
 const App = () => {
-
 	return (
-
 		<div className="App">
-			<Header />
-			<BodyNews />
-			<Footer />
-
-		</div>
-
+			<Routes>
+				<Route path='/' element={<Layout />}>
+					<Route index element={<BodyNews />} />
+					<Route path=":id" element={<BodyNews />} />
+					<Route path="news/:id" element={<SinglePageNews />} />
+					<Route path='*' element={<NotFound />} />
+				</Route>
+			</Routes>
+		</div >
 	);
 }
 
