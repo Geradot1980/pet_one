@@ -7,13 +7,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&display=swap');
 
 body {
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	max-width: 1100px;
+
+
 	background-color: var(--light-color);
-	height: 100%;
-
-
-	margin: 0;
 	font-family: 'Merriweather', serif;
-
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -68,6 +72,7 @@ header {
 .footer-container {
 	flex: 0 0 auto;
 	margin: 15px 0px;
+	margin-bottom: 10px;
 	font-size: 0.8rem;
 	text-align: center;
 	color: var(--darkgray-color);
@@ -77,11 +82,24 @@ header {
 	flex: 1 0 auto;
 }
 
+.notfind-container {
+	font-size: 3rem;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-content: center;
+	align-self: center;
+	text-align: center;
+}
+
 /* -------------------- */
 /* paginator component */
 /* -------------------- */
 
 .pagination-contaener {
+
 	background: var(--light-color);
 }
 
@@ -127,6 +145,7 @@ ul.pagination li.active {
 }
 
 .spn-textcontainer>h1 {
+	margin-block-start: 0px;
 	text-align: center;
 	color: var(--darkgray-color);
 }
@@ -134,6 +153,17 @@ ul.pagination li.active {
 .spn-textcontainer>h5 {
 	text-align: right;
 	color: var(--darkgray-color);
+}
+
+.spn-imagecontainer {
+	width: 100%;
+
+	overflow: hidden;
+}
+
+.spn-articleimage {
+	width: 100%;
+
 }
 
 /* --------------------- */
@@ -179,11 +209,20 @@ article {
 
 }
 
+
+.article-imagecontainer {
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+}
+
 .cards-container {
 	padding: 20px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 25px;
+	object-fit: fill;
+
 	height: 100%;
 }
 
@@ -205,7 +244,7 @@ article {
 	font-size: 0.9rem;
 }
 
-.data {
+.article__data {
 	vertical-align: bottom;
 	text-align: left;
 	font-size: 0.8rem;
@@ -220,7 +259,7 @@ article {
 	justify-content: space-between;
 }
 
-.moreinfo {
+.article__moreinfo {
 	vertical-align: bottom;
 	text-align: right;
 	font-size: 0.8rem;

@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from 'react'
+import NotFound from "../NotFound/NotFound"
 
 
 const SinglePageNews = () => {
@@ -13,7 +14,6 @@ const SinglePageNews = () => {
 			.then(result => result.json())
 			.then(data => {
 				setArticleData(data)
-				//console.log(articleData)
 			})
 			.catch(err => console.error(err));
 	}, [])
@@ -26,11 +26,19 @@ const SinglePageNews = () => {
 		}
 	}
 
+
+
+
+
+	/* 	if (!!paramReads) {
+			console.log('change') */
 	if (articleData) {
 
 		return (
 			<div className="spn-container">
-				<img src={articleData.data.image} alt={articleData.data.preview} />
+				<div className="spn-imagecontainer">
+					<img className="spn-articleimage" src={articleData.data.image} alt={articleData.data.preview} />
+				</div>
 				<div className="spn-textcontainer">
 					<h1>{articleData.data.title}</h1>
 					<h3>{articleData.data.preview}</h3>
@@ -39,11 +47,14 @@ const SinglePageNews = () => {
 					<hr />
 					<h5>{articleData.data.date.slice(0, 10)}</h5>
 				</div>
-				<hr />
 				{chngR()}
 			</div>
 		)
-	}
+	} /* else {
+		console.log('NotFind');
+		return < NotFound />
+	} */
+	/* 	} else console.log('BAH!') */
 }
 
 export default SinglePageNews
