@@ -10,7 +10,7 @@ const PageCards = (props) => {
 				<img className="article__image" src={card.image} alt={card.title} />
 			</div>
 			<div className="article__text">
-				<Link to={"/" + card.link.slice(29)} >
+				<Link to={"/pet_one/" + card.link.slice(29)} >
 					<h4>{card.title}</h4>
 				</Link>
 				<div className="article__preview">{card.preview.slice(0, 250)}  </div>
