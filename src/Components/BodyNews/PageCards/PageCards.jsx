@@ -18,7 +18,7 @@ const PageCards = (props) => {
 				<div className="article__footer">
 					<div className="article__data">{card.date.slice(0, 10)} </div>
 					<div className="article__moreinfo">
-						<Link to={"/" + card.link.slice(29)}>Далее»</Link>
+						<Link to={"/pet_one/" + card.link.slice(29)}>Далее»</Link>
 					</div>
 				</div>
 			</div>

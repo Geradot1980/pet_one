@@ -151,6 +151,7 @@ ul.pagination li.active {
 }
 
 .spn-textcontainer>h5 {
+	margin-block-end: 0.3em;
 	text-align: right;
 	color: var(--darkgray-color);
 }
