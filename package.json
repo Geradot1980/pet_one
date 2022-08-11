@@ -2,7 +2,7 @@
   "name": "testovoe-01",
   "version": "0.1.0",
   "private": true,
-	"homepage": "https://geradot1980.github.io/pet_one/",
+	"homepage": "https://geradot1980.github.io/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",

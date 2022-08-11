@@ -30,7 +30,7 @@ const Paginator = (props) => {
 				// добавляем пункт загрузить еще
 				if ((links[index].active) && ((+links[index].label + 15) < (+links[links.length - 2].label))) {
 					currentPageLi = <li>
-						<Link to={"/pet_one/news?page=" + (+links[index].label + 15)}
+						<Link to={"/news?page=" + (+links[index].label + 15)}
 							onClick={clickLink}>
 							Загрузить еще</Link></li>
 				}
@@ -38,7 +38,7 @@ const Paginator = (props) => {
 					// генерируем элементы пагинатора
 					aList[index] = <li key={index}
 						className={links[index].active ? "active" : ""}>
-						<Link to={links[index].url ? "/pet_one/" + links[index].url.slice(links[index].url.lastIndexOf("news")) : ""}
+						<Link to={links[index].url ? "/" + links[index].url.slice(links[index].url.lastIndexOf("news")) : ""}
 							onClick={clickLink}>
 							{links[index].label}</Link></li>
 				} else {

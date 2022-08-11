@@ -11,7 +11,7 @@ const App = () => {
 	return (
 		<div className="App">
 			<Routes>
-				<Route path='/pet_one/' element={<Layout />}>
+				<Route path='/' element={<Layout />}>
 					<Route index element={<BodyNews />} />
 					<Route path=":id" element={<BodyNews />} />
 					<Route path="news/:id" element={<SinglePageNews />} />

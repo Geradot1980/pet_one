@@ -12,7 +12,7 @@ export default function Header() {
 				<div>
 					<img className="logos" src={loginImg} alt="login" />
 				</div>
-				<Link to="/pet_one/">
+				<Link to="/">
 					<div className="logoimgs">
 						<img className="logoimg" src={logoImg} alt="logo" />
 						<img className="logoname" src={logoNameImg} alt="logo" />
