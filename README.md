@@ -5,6 +5,8 @@
   [www.pet-one.geradot.st8.ru](http://pet-one.geradot.st8.ru/)
 
 
+![coverimage](rr.jpg)
+
 ## Задачи (Тикеты)
 0. Использовать публичное [API](https://rosrezerv.gov.ru/api/news)
 1. Поднять проект на React.
