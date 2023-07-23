@@ -1,5 +1,5 @@
 
-# Новостная лента. v 0.8 
+# Новостная лента.
  [Репозиторий с проектом](https://github.com/Geradot1980/pet_one) 
  
   [www.pet-one.geradot.st8.ru](http://pet-one.geradot.st8.ru/)
